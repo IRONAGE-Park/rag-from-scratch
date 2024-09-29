@@ -51,7 +51,7 @@ Passage:
 prompt_hyde = ChatPromptTemplate.from_template(template)
 
 generate_docs_for_retrieval = (
-    prompt_hyde | llm | StrOutputParser()
+  prompt_hyde | llm | StrOutputParser()
 )
 
 # 예시 질문
@@ -75,9 +75,9 @@ Question: {question}
 prompt = ChatPromptTemplate.from_template(template)
 
 final_rag_chain = (
-    prompt
-    | llm
-    | StrOutputParser()
+  prompt
+  | llm
+  | StrOutputParser()
 )
 
 # 최종 RAG 체인 실행
