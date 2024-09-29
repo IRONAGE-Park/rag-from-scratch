@@ -89,7 +89,7 @@ retriever = vectorstore.as_retriever(search_kwargs={"k": 1})
 # prompt = ChatPromptTemplate.from_template(template)
 
 # # LLM 생성
-# llm = ChatOpenAI(model_name="gpt-4o", temperature=0)
+# llm = ChatOpenAI(model_name="gpt-4o-mini", temperature=0)
 
 # # 체인(chain) 생성: 프롬프트와 LLM 연결
 # chain = prompt | llm
@@ -102,7 +102,7 @@ retriever = vectorstore.as_retriever(search_kwargs={"k": 1})
 prompt = hub.pull("rlm/rag-prompt")
 
 # LLM
-llm = ChatOpenAI(model_name="gpt-4o", temperature=0)
+llm = ChatOpenAI(model_name="gpt-4o-mini", temperature=0)
 
 # Post-processing
 def format_docs(docs):
