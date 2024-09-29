@@ -6,6 +6,7 @@
 # Chain-of-Thought
 # Least-to-Most Prompting: 하위 문제를 순차적으로 제공하여 사용자의 이해도를 높임
 # Interleaving Retrieval with hain-of-Thought Reasoning: 정보 검색과 COT 추론을 상호보완적으로 결합
+# > 점진적으로 문제를 해결
 
 from dotenv import load_dotenv 
 
