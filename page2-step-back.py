@@ -9,7 +9,6 @@
 from dotenv import load_dotenv 
 
 import bs4
-from langchain import hub
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_community.vectorstores import Chroma
@@ -40,7 +39,10 @@ vectorstore = Chroma.from_documents(documents=splits,
 
 retriever = vectorstore.as_retriever()
 
+llm = ChatOpenAI(model_name="gpt-4o-mini", temperature=0)
+
 # fewshot
+# 1. Few-shot 예시 생성
 examples = [
   {
     "input": "Could the members of The Police perform lawful arrests?",
@@ -78,11 +80,12 @@ prompt = ChatPromptTemplate.from_messages(
   ]
 )
 
-llm = ChatOpenAI(model_name="gpt-4o-mini", temperature=0)
 
 generate_queries_step_back = prompt | llm | StrOutputParser()
 
 question = "What is task decomposition for LLM agents?"
+
+# 2. Step Back 질문 생성 및 검색 & 답변 생성
 response_prompt_template = """
 You are an expert of world knowledge. I am going to ask you a question. 
 Your response should be comprehensive and not contradicted with the following context if they are relevant. 
