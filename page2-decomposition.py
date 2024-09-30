@@ -18,7 +18,7 @@ from langchain_community.vectorstores import Chroma
 from langchain_core.output_parsers import StrOutputParser
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain.prompts import ChatPromptTemplate
-from operator import itemgetter
+# from operator import itemgetter
 
 load_dotenv()
 

@@ -16,7 +16,6 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnableLambda 
 from langchain_core.prompts import ChatPromptTemplate, FewShotChatMessagePromptTemplate
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
-from operator import itemgetter
 
 load_dotenv()
 
